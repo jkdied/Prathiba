@@ -2,9 +2,7 @@ const Discord = require('discord.js');
 
 const bot = new Discord.Client();
 
-const config = require('./config.json');
-
-const token = config.token;
+const token = process.env.token;
 
 const PREFIX = 'maam';
 
