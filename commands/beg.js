@@ -11,7 +11,7 @@ module.exports = {
     let usermoney = await db.fetch(`money_${msg.author.id}`);
     if(usermoney == null) usermoney = 0;
 
-    var points = Math.floor(Math.random() * Math.floor(3))
+    var points = Math.floor(Math.random() * Math.floor(4))
 
     let timeout = 30000; // 24 hours in milliseconds, change if you'd like.
     // random amount: Math.floor(Math.random() * 1000) + 1;
@@ -29,6 +29,7 @@ module.exports = {
     } else {
 
       db.set(`begtime_${msg.author.id}`, Date.now());
+      db.add(`money_${user.id}`, points);
       
       console.log(`money_${user.id}` + points)
       if(points == '0'){
